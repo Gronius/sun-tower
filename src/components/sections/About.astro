@@ -1,0 +1,41 @@
+---
+import { about } from "@data/about";
+---
+
+<section class="about" id="about">
+  <div class="container">
+
+    <div class="about__inner">
+
+      <div class="about__media">
+        About Image
+      </div>
+
+      <div class="about__content">
+
+        <span class="about__badge">
+          {about.badge}
+        </span>
+
+        <h2 class="about__title">
+          {about.title}
+        </h2>
+
+        <p class="about__description">
+          {about.description}
+        </p>
+
+        <ul class="about__features">
+          {about.features.map((feature) => (
+            <li class="about__feature">
+              {feature}
+            </li>
+          ))}
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
