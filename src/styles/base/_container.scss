@@ -1,5 +1,12 @@
 .container {
   width: min(100% - 2rem, var(--container-width));
   margin-inline: auto;
-  color: var(--color-test);
+}
+
+.container--wide {
+  width: min(100% - 2rem, 1440px);
+}
+
+.container--full {
+  width: 100%;
 }

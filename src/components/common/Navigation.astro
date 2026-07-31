@@ -1,0 +1,17 @@
+---
+import { navigation } from "@data/navigation";
+---
+
+<nav class="navigation" aria-label="Основна навігація">
+  <ul class="navigation__list">
+    {
+      navigation.map((item) => (
+        <li class="navigation__item">
+          <a class="navigation__link" href={item.href}>
+            {item.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

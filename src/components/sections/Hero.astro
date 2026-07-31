@@ -1,0 +1,39 @@
+---
+import { hero } from "@data/hero";
+import Button from "@components/ui/Button.astro";
+---
+
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero__inner">
+
+      <div class="hero__content">
+
+        <span class="hero__badge">
+          {hero.badge}
+        </span>
+
+        <h1 class="hero__title">
+          {hero.title}
+        </h1>
+
+        <p class="hero__description">
+          {hero.description}
+        </p>
+
+        <div class="hero__actions">
+          <Button
+            text={hero.primaryButton.text}
+            href={hero.primaryButton.href}
+          />
+        </div>
+
+      </div>
+
+      <div class="hero__media">
+        Hero Image
+      </div>
+
+    </div>
+  </div>
+</section>
