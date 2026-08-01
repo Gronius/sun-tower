@@ -1,0 +1,101 @@
+---
+import { cta } from "@data/cta";
+import Button from "@components/ui/Button.astro";
+---
+
+<section class="cta" id="consultation">
+
+  <div class="container">
+
+    <div class="cta__inner">
+
+      <div class="cta__content">
+
+        <span class="cta__badge">
+          {cta.badge}
+        </span>
+
+        <h2 class="cta__title">
+          {cta.title}
+        </h2>
+
+        <p class="cta__description">
+          {cta.description}
+        </p>
+
+      </div>
+
+      <form class="cta__form">
+
+        <div class="cta__field">
+
+          <label for="name">
+            Ім'я
+          </label>
+
+          <input
+            id="name"
+            type="text"
+            placeholder="Ваше ім'я"
+          />
+
+        </div>
+
+        <div class="cta__field">
+
+          <label for="phone">
+            Телефон
+          </label>
+
+          <input
+            id="phone"
+            type="tel"
+            placeholder="+421..."
+          />
+
+        </div>
+
+        <div class="cta__field">
+
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            id="email"
+            type="email"
+            placeholder="example@email.com"
+          />
+
+        </div>
+
+        <div class="cta__field">
+
+          <label for="message">
+            Коментар
+          </label>
+
+          <textarea
+            id="message"
+            rows="4"
+            placeholder="Ваше повідомлення (необов'язково)"
+          ></textarea>
+
+        </div>
+
+        <Button
+          text={cta.buttonText}
+          type="submit"
+        />
+
+        <p class="cta__privacy">
+          {cta.privacyText}
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>

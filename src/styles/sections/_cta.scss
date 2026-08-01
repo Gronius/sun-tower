@@ -1,0 +1,108 @@
+.cta {
+  padding-block: var(--space-9);
+}
+
+.cta__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+
+  padding: var(--space-8);
+
+  border-radius: var(--radius-xl);
+
+  background: var(--color-primary);
+
+  color: #fff;
+}
+
+.cta__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta__badge {
+  display: inline-flex;
+  align-self: flex-start;
+
+  margin-bottom: var(--space-4);
+
+  padding: .5rem 1rem;
+
+  border-radius: var(--radius-full);
+
+  background: rgba(255,255,255,.15);
+}
+
+.cta__title {
+  margin-bottom: var(--space-4);
+
+  font-size: clamp(2rem,4vw,3rem);
+}
+
+.cta__description {
+  line-height: 1.8;
+  opacity: .9;
+}
+
+.cta__form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.cta__field {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.cta__field label {
+  font-weight: 600;
+}
+
+.cta__field input,
+.cta__field textarea {
+  width: 100%;
+
+  padding: .9rem 1rem;
+
+  border: none;
+
+  border-radius: var(--radius-md);
+
+  font: inherit;
+}
+
+.cta__form .button {
+  width: 100%;
+}
+
+.cta__privacy {
+  font-size: .875rem;
+
+  opacity: .75;
+
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+
+  .cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .cta {
+    padding-block: var(--space-8);
+  }
+
+  .cta__inner {
+    padding: var(--space-5);
+  }
+
+}
+
