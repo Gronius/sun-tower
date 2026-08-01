@@ -1,0 +1,42 @@
+---
+import { gallery } from "@data/gallery";
+---
+
+<section class="gallery" id="gallery">
+  <div class="container">
+
+    <div class="gallery__heading">
+
+      <span class="gallery__badge">
+        Галерея
+      </span>
+
+      <h2 class="gallery__title">
+        Побачте Sun Tower ще до початку будівництва
+      </h2>
+
+      <p class="gallery__description">
+        Ознайомтеся з візуалізаціями комплексу, його архітектурою
+        та майбутнім простором для життя.
+      </p>
+
+    </div>
+
+    <div class="gallery__grid">
+
+      {gallery.map((item) => (
+        <figure class="gallery-card">
+
+          <img
+            src={item.image}
+            alt={item.alt}
+            loading="lazy"
+          />
+
+        </figure>
+      ))}
+
+    </div>
+
+  </div>
+</section>
