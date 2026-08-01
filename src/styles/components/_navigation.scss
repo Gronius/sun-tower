@@ -13,3 +13,9 @@
 .navigation__link:hover {
   color: var(--color-primary);
 }
+
+@media (max-width: 992px) {
+  .navigation__list {
+    display: none;
+  }
+}

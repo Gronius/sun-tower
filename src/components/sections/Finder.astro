@@ -1,0 +1,115 @@
+---
+import Button from "@components/ui/Button.astro";
+---
+
+<section class="finder" id="finder">
+  <div class="container">
+
+    <div class="finder__heading">
+
+      <span class="finder__badge">
+        Пошук квартири
+      </span>
+
+      <h2 class="finder__title">
+        Оберіть квартиру своєї мрії
+      </h2>
+
+      <p class="finder__description">
+        Скористайтеся фільтрами, щоб швидко знайти квартиру,
+        яка відповідає вашим побажанням.
+      </p>
+
+    </div>
+
+    <form class="finder__form">
+
+      <div class="finder__field">
+
+        <label
+          class="finder__label"
+          for="rooms"
+        >
+          Кімнатність
+        </label>
+
+        <select
+          id="rooms"
+          class="finder__select"
+        >
+          <option value="">Усі</option>
+          <option value="1">1 кімната</option>
+          <option value="2">2 кімнати</option>
+          <option value="3">3 кімнати</option>
+          <option value="4">4 кімнати</option>
+        </select>
+
+      </div>
+
+      <div class="finder__field">
+
+        <label
+          class="finder__label"
+          for="section"
+        >
+          Секція
+        </label>
+
+        <select
+          id="section"
+          class="finder__select"
+        >
+          <option value="">Усі</option>
+          <option value="1">Секція 1</option>
+          <option value="2">Секція 2</option>
+        </select>
+
+      </div>
+
+      <div class="finder__field">
+
+        <label
+          class="finder__label"
+          for="floor"
+        >
+          Поверх
+        </label>
+
+        <select
+          id="floor"
+          class="finder__select"
+        >
+          <option value="">Усі</option>
+        </select>
+
+      </div>
+
+      <div class="finder__field">
+
+        <label
+          class="finder__label"
+          for="area"
+        >
+          Площа
+        </label>
+
+        <select
+          id="area"
+          class="finder__select"
+        >
+          <option value="">Уся</option>
+        </select>
+
+      </div>
+
+<div class="finder__actions">
+  <Button
+    text="Знайти квартиру"
+    type="submit"
+  />
+</div>
+
+    </form>
+
+  </div>
+</section>

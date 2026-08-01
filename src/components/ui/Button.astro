@@ -2,11 +2,30 @@
 interface Props {
   text: string;
   href?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
-const { text, href = "#" } = Astro.props;
+const {
+  text,
+  href,
+  type = "button",
+  disabled = false,
+} = Astro.props as Props;
 ---
 
-<a class="button" href={href}>
-  {text}
-</a>
+{
+  href ? (
+    <a class="button" href={href}>
+      {text}
+    </a>
+  ) : (
+    <button
+      class="button"
+      type={type}
+      disabled={disabled}
+    >
+      {text}
+    </button>
+  )
+}
