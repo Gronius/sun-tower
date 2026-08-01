@@ -1,0 +1,91 @@
+---
+import { apartments } from "@data/apartments";
+import Button from "@components/ui/Button.astro";
+
+const statusLabels = {
+  available: "Вільна",
+  reserved: "Заброньована",
+  sold: "Продана",
+};
+---
+
+<section class="apartments" id="apartments">
+  <div class="container">
+
+    <div class="apartments__heading">
+
+      <span class="apartments__badge">
+        Квартири
+      </span>
+
+      <h2 class="apartments__title">
+        Доступні квартири
+      </h2>
+
+      <p class="apartments__description">
+        Оберіть квартиру, яка найбільше відповідає вашим потребам.
+      </p>
+
+    </div>
+
+    <div class="apartments__grid">
+
+      {
+        apartments.map((apartment) => (
+
+          <article class="apartment-card">
+
+            <div class="apartment-card__content">
+
+        <h3 class="apartment-card__title">
+           {apartment.number}
+        </h3>
+
+              <ul class="apartment-card__list">
+
+                <li>
+                  Кімнат:
+                  <strong>{apartment.rooms}</strong>
+                </li>
+
+                <li>
+                  Площа:
+                  <strong>{apartment.area} м²</strong>
+                </li>
+
+                <li>
+                  Поверх:
+                  <strong>{apartment.floor}</strong>
+                </li>
+
+                <li>
+                  Секція:
+                  <strong>{apartment.section}</strong>
+                </li>
+
+              </ul>
+
+              <div class="apartment-card__footer">
+
+             <span class="apartment-card__status">
+              {statusLabels[apartment.status]}
+            </span>
+
+                <Button
+                  text="Детальніше"
+                  href="#"
+                />
+
+              </div>
+
+            </div>
+
+          </article>
+
+        ))
+      }
+
+    </div>
+
+  </div>
+</section>
