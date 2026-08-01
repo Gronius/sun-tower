@@ -1,0 +1,162 @@
+.location {
+  padding-block: var(--space-9);
+}
+.location__heading {
+  max-width: 44rem;
+
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+
+  text-align: center;
+}
+
+.location__badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: .5rem 1rem;
+  margin-bottom: var(--space-4);
+
+  border-radius: var(--radius-full);
+
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+
+  font-weight: 600;
+}
+
+.location__title {
+  margin-bottom: var(--space-4);
+
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.location__description {
+  color: var(--color-text-light);
+
+  line-height: 1.8;
+}
+
+.location__inner {
+  display: grid;
+
+  grid-template-columns: 1.2fr .8fr;
+
+  gap: var(--space-8);
+
+  align-items: stretch;
+}
+
+.location__map {
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--color-border);
+
+  background: #fff;
+}
+
+.location__map img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.location__content {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  background: #fff;
+}
+
+.location__subtitle {
+  margin-bottom: var(--space-3);
+
+  font-size: 1.5rem;
+}
+
+.location__address {
+  margin-bottom: var(--space-6);
+
+  color: var(--color-text-light);
+
+  line-height: 1.7;
+}
+
+.location__list {
+  display: grid;
+
+  gap: var(--space-3);
+
+  margin-bottom: auto;
+}
+
+.location__item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding-bottom: .75rem;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.location__place {
+  font-weight: 500;
+}
+
+.location__distance {
+  color: var(--color-primary);
+
+  font-weight: 600;
+}
+
+.location__actions {
+  margin-top: var(--space-6);
+}
+
+.location__actions .button {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+
+  .location__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .location__map {
+    min-height: 420px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .location {
+    padding-block: var(--space-8);
+  }
+
+  .location__content {
+    padding: var(--space-4);
+  }
+
+  .location__map {
+    min-height: 280px;
+  }
+
+}
+

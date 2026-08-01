@@ -1,0 +1,82 @@
+---
+import { location } from "@data/location";
+import Button from "@components/ui/Button.astro";
+---
+
+<section class="location" id="location">
+  <div class="container">
+
+    <div class="location__heading">
+
+      <span class="location__badge">
+        {location.badge}
+      </span>
+
+      <h2 class="location__title">
+        {location.title}
+      </h2>
+
+      <p class="location__description">
+        {location.description}
+      </p>
+
+    </div>
+
+    <div class="location__inner">
+
+      <div class="location__map">
+
+        <img
+          src={location.map}
+          alt="Розташування ЖК Sun Tower"
+        />
+
+      </div>
+
+      <div class="location__content">
+
+        <h3 class="location__subtitle">
+          Адреса
+        </h3>
+
+        <p class="location__address">
+          {location.address}
+        </p>
+
+        <ul class="location__list">
+
+          {
+            location.infrastructure.map((item) => (
+
+              <li class="location__item">
+
+                <span class="location__place">
+                  {item.title}
+                </span>
+
+                <span class="location__distance">
+                  {item.distance}
+                </span>
+
+              </li>
+
+            ))
+          }
+
+        </ul>
+
+        <div class="location__actions">
+
+          <Button
+            text="Побудувати маршрут"
+            href="#"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
