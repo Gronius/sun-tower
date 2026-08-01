@@ -1,0 +1,96 @@
+---
+import { floorPlans } from "@data/floor-plans";
+import Button from "@components/ui/Button.astro";
+
+const currentPlan = floorPlans[0];
+---
+
+<section class="floor-plans" id="floor-plans">
+  <div class="container">
+
+    <div class="floor-plans__heading">
+
+      <span class="floor-plans__badge">
+        Планування
+      </span>
+
+      <h2 class="floor-plans__title">
+        Планування квартир
+      </h2>
+
+      <p class="floor-plans__description">
+        Ознайомтеся з доступними типами квартир та оберіть оптимальний варіант для себе.
+      </p>
+
+    </div>
+
+    <div class="floor-plans__inner">
+
+      <aside class="floor-plans__sidebar">
+
+        <h3 class="floor-plans__subtitle">
+          Тип квартири
+        </h3>
+
+        <ul class="floor-plans__list">
+
+          {
+            floorPlans.map((plan) => (
+
+              <li>
+
+                <button
+                  class="floor-plans__option"
+                  type="button"
+                >
+                  {plan.rooms}-кімнатна
+                </button>
+
+              </li>
+
+            ))
+          }
+
+        </ul>
+
+      </aside>
+
+      <div class="floor-plans__content">
+
+        <div class="floor-plans__image">
+
+          <img
+            src={currentPlan.image}
+            alt={`${currentPlan.rooms}-кімнатна квартира`}
+          />
+
+        </div>
+
+        <div class="floor-plans__info">
+
+          <h3 class="floor-plans__plan-title">
+            {currentPlan.rooms}-кімнатна квартира
+          </h3>
+
+          <p class="floor-plans__area">
+            Площа:
+            <strong>{currentPlan.area} м²</strong>
+          </p>
+
+          <p class="floor-plans__text">
+            {currentPlan.description}
+          </p>
+
+          <Button
+            text="Переглянути квартири"
+            href="#finder"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

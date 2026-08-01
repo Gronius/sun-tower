@@ -108,6 +108,13 @@
   flex-shrink: 0;
 }
 
+.apartments__actions {
+  margin-top: var(--space-8);
+
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 576px) {
 
   .apartments {

@@ -31,7 +31,7 @@ const statusLabels = {
     <div class="apartments__grid">
 
       {
-        apartments.map((apartment) => (
+         apartments.slice(0, 8).map((apartment) => (
 
           <article class="apartment-card">
 
@@ -85,6 +85,13 @@ const statusLabels = {
         ))
       }
 
+    </div>
+
+     <div class="apartments__actions">
+       <Button
+    text="Переглянути всі квартири"
+    href="#finder"
+     />
     </div>
 
   </div>
