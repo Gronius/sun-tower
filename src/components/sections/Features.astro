@@ -1,0 +1,49 @@
+---
+import { features } from "@data/features";
+import SectionHeading from "@components/common/SectionHeading.astro";
+---
+
+<section class="features" id="features">
+  <div class="container">
+
+    <SectionHeading
+  badge="Переваги"
+  title="Чому обирають Sun Tower"
+/>
+
+    <!-- <div class="features__heading">
+
+      <span class="features__badge">
+        Переваги
+      </span>
+
+      <h2 class="features__title">
+        Чому обирають Sun Tower
+      </h2>
+
+    </div> -->
+
+    <div class="features__grid">
+
+      {features.map((feature) => (
+        <article class="feature-card">
+
+          <div class="feature-card__icon">
+            {feature.icon}
+          </div>
+
+          <h3 class="feature-card__title">
+            {feature.title}
+          </h3>
+
+          <p class="feature-card__description">
+            {feature.description}
+          </p>
+
+        </article>
+      ))}
+
+    </div>
+
+  </div>
+</section>
