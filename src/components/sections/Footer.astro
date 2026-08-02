@@ -1,0 +1,116 @@
+---
+import { site } from "@data/site";
+---
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__top">
+
+      <div class="footer__brand">
+
+        <a
+          href="#hero"
+          class="footer__logo"
+        >
+          {site.name}
+        </a>
+
+        <p class="footer__description">
+          {site.slogan}
+        </p>
+
+      </div>
+
+      <nav
+        class="footer__navigation"
+        aria-label="Footer navigation"
+      >
+
+        <h3 class="footer__heading">
+          Навігація
+        </h3>
+
+        <ul class="footer__menu">
+
+          <li><a href="#hero">Головна</a></li>
+
+          <li><a href="#about">Про комплекс</a></li>
+
+          <li><a href="#gallery">Галерея</a></li>
+
+          <li><a href="#finder">Пошук квартир</a></li>
+
+          <li><a href="#location">Локація</a></li>
+
+        </ul>
+
+      </nav>
+
+      <div class="footer__contacts">
+
+        <h3 class="footer__heading">
+          Контакти
+        </h3>
+
+        <ul class="footer__list">
+
+          <li>
+            <a href={`tel:${site.phone}`}>
+              {site.phone}
+            </a>
+          </li>
+
+          <li>
+            <a href={`mailto:${site.email}`}>
+              {site.email}
+            </a>
+          </li>
+
+          <li>
+            Námestie Ľ. Štúra 5944/2
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__social">
+
+        <h3 class="footer__heading">
+          Соціальні мережі
+        </h3>
+
+        <ul class="footer__list">
+
+          <li><a href="#">Facebook</a></li>
+
+          <li><a href="#">Instagram</a></li>
+
+          <li><a href="#">YouTube</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>
+        © {new Date().getFullYear()} {site.name}. Усі права захищено.
+      </p>
+
+      <a
+        href="#hero"
+        class="footer__top-link"
+      >
+        ↑ Вгору
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
