@@ -46,6 +46,13 @@ src/
 ├── scripts/
 │   ├── finder.ts
 │   ├── main.ts
+    ├── header.ts
+    ├── navigation.ts
+    ├── scroll.ts
+    ├── back-to-top.ts
+    └── utils/
+        └── debounce.ts
+        └── throttle.ts
 ├── styles/
 │   ├── abstracts/
 │       ├── _variables.scss
@@ -82,3 +89,17 @@ src/
 │       └── _index.scss
 │
 │   ├── global.scss
+
+## JavaScript
+
+Усі клієнтські модулі підключаються лише через один вхідний файл:
+
+src/scripts/main.ts
+
+BaseLayout.astro
+
+<script type="module">
+  import "@scripts/main";
+</script>
+
+Ніякі інші скрипти напряму в секціях не підключаються.
