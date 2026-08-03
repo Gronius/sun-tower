@@ -33,13 +33,21 @@ const statusLabels = {
       {
          apartments.slice(0, 8).map((apartment) => (
 
-          <article class="apartment-card">
+          <article 
+            class="apartment-card"
+            data-id={apartment.id}
+            data-rooms={apartment.rooms}
+            data-floor={apartment.floor}
+            data-area={apartment.area}
+            data-section={apartment.section}
+            data-status={apartment.status}
+          >
 
             <div class="apartment-card__content">
 
-        <h3 class="apartment-card__title">
-           {apartment.number}
-        </h3>
+              <h3 class="apartment-card__title">
+                {apartment.number}
+              </h3>
 
               <ul class="apartment-card__list">
 
@@ -67,9 +75,9 @@ const statusLabels = {
 
               <div class="apartment-card__footer">
 
-             <span class="apartment-card__status">
-              {statusLabels[apartment.status]}
-            </span>
+              <span class="apartment-card__status">
+                {statusLabels[apartment.status]}
+              </span>
 
                 <Button
                   text="Детальніше"

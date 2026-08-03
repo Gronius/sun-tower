@@ -1,0 +1,130 @@
+---
+
+import Button from "@components/ui/Button.astro";
+
+
+
+interface Props {
+  title?: string;
+  description?: string;
+  submitText?: string;
+
+  source?: string;
+  selectedApartment?: string;
+}
+
+const {
+  title = "Запишіться на перегляд",
+  description = "Залиште свої контакти, і ми зв'яжемося з вами найближчим часом.",
+  submitText = "Надіслати заявку",
+
+  source = "",
+  selectedApartment = "",
+} = Astro.props;
+---
+
+<form class="lead-form">
+
+  <input
+    type="hidden"
+    name="selectedApartment"
+    value={selectedApartment}
+  />
+
+  <input
+    type="hidden"
+    name="source"
+    value={source}
+  />
+
+  <div class="lead-form__wrapper">
+
+      <div class="lead-form__header">
+
+        <h3 class="lead-form__title">
+          {title}
+        </h3>
+
+        <p class="lead-form__description">
+          {description}
+        </p>
+
+      </div>
+
+      <div class="lead-form__body">
+
+        <div class="lead-form__field">
+
+          <label
+            class="lead-form__label"
+            for="lead-name"
+          >
+            Ваше ім'я
+          </label>
+
+          <input
+            id="lead-name"
+            class="lead-form__input"
+            type="text"
+            name="name"
+            placeholder="Ваше ім'я"
+            required
+          />
+
+        </div>
+
+        <div class="lead-form__field">
+
+          <label
+            class="lead-form__label"
+            for="lead-phone"
+          >
+            Номер телефону
+          </label>
+
+          <input
+            id="lead-phone"
+            class="lead-form__input"
+            type="tel"
+            name="phone"
+            placeholder="+421..."
+            required
+          />
+
+        </div>
+
+        <div class="lead-form__field">
+
+          <label
+            class="lead-form__label"
+            for="lead-message"
+          >
+            Коментар (необов'язково)
+          </label>
+
+          <textarea
+            id="lead-message"
+            class="lead-form__textarea"
+            name="message"
+            rows="4"
+            placeholder="Наприклад: хочу переглянути квартиру у..."
+          ></textarea>
+
+        </div>
+
+      </div>
+
+      <div class="lead-form__footer">
+
+        <Button
+          text={submitText}
+          type="submit"
+        />
+
+        <p class="lead-form__note">
+            Ми зв'яжемося з вами протягом робочого дня.
+        </p>
+
+      </div>
+  </div>
+</form>

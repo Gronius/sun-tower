@@ -50,9 +50,15 @@ src/
     ├── navigation.ts
     ├── scroll.ts
     ├── back-to-top.ts
+    ├── filters/
+        └── filter-apartments.ts
+    └── render/
+        └── apartment-card.ts        
+
     └── utils/
         └── debounce.ts
         └── throttle.ts
+
 ├── styles/
 │   ├── abstracts/
 │       ├── _variables.scss
@@ -69,6 +75,7 @@ src/
 │
 │   ├──components/
 │       ├── _button.scss
+│       ├── _lead-form.scss
 │       ├── _logo.scss
 │       ├── _navigation.scss
 │       └── _index.scss

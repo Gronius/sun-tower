@@ -67,5 +67,28 @@ export const apartments: Apartment[] = [
     plan: "/images/plans/plan-04.jpg",
   },
 
+  {
+    id: 5,
+    number: "A-206",
+    section: 2,
+    floor: 2,
+    rooms: 4,
+    area: 78.5,
+    status: "available",
+    plan: "",
+  },
+
+    {
+    id: 6,
+    number: "A-606",
+    section: 1,
+    floor: 6,
+    rooms: 3,
+    area: 74.2,
+    status: "available",
+    plan: "/images/plans/plan-03.jpg",
+    
+  },
+
   // ...
 ];

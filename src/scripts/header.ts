@@ -16,10 +16,3 @@ export function initHeader(): void {
   window.addEventListener("scroll", toggleHeader);
 }
 
-// export function initHeader(): void {
-//   console.log("Header initialized");
-
-//   const header = document.querySelector<HTMLElement>(".header");
-
-//   console.log(header);
-// }

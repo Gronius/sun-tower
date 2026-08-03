@@ -22,7 +22,7 @@ import Button from "@components/ui/Button.astro";
 
     </div>
 
-    <form class="finder__form">
+    <form  id="finder-form" class="finder__form">
 
       <div class="finder__field">
 
@@ -35,6 +35,7 @@ import Button from "@components/ui/Button.astro";
 
         <select
           id="rooms"
+          name="rooms"
           class="finder__select"
         >
           <option value="">Усі</option>
@@ -57,6 +58,7 @@ import Button from "@components/ui/Button.astro";
 
         <select
           id="section"
+          name="section"
           class="finder__select"
         >
           <option value="">Усі</option>
@@ -77,6 +79,7 @@ import Button from "@components/ui/Button.astro";
 
         <select
           id="floor"
+          name="floor"
           class="finder__select"
         >
           <option value="">Усі</option>
@@ -95,6 +98,7 @@ import Button from "@components/ui/Button.astro";
 
         <select
           id="area"
+          name="area"
           class="finder__select"
         >
           <option value="">Уся</option>
@@ -102,14 +106,40 @@ import Button from "@components/ui/Button.astro";
 
       </div>
 
-<div class="finder__actions">
+      <div class="finder__actions">
+
   <Button
-    text="Знайти квартиру"
+    text="Показати"
     type="submit"
   />
+
+  <button
+    type="button"
+    class="finder__reset"
+  >
+    Оновити
+  </button>
+
 </div>
 
     </form>
+
+    <div class="finder__results">
+
+      <div class="finder__results-header">
+
+        <h3 class="finder__results-title">
+          Результати пошуку
+        </h3>
+
+        <span class="finder__results-count"></span>
+
+      </div>
+
+      <div class="finder__results-list"></div>
+
+    </div>
+
 
   </div>
 </section>

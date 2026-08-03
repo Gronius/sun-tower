@@ -1,5 +1,7 @@
 ---
 import { site } from "@data/site";
+
+import { navigation } from "@data/navigation";
 ---
 
 <footer class="footer">
@@ -33,8 +35,20 @@ import { site } from "@data/site";
         </h3>
 
         <ul class="footer__menu">
+            {
+            navigation.map((item) => (
 
-          <li><a href="#hero">Головна</a></li>
+          <li>
+            <a href={item.href}>
+              {item.title}
+            </a>
+          </li>
+
+            ))
+          }
+
+         </ul>   
+        <!-- <li><a href="#hero">Головна</a></li>
 
           <li><a href="#about">Про комплекс</a></li>
 
@@ -42,9 +56,9 @@ import { site } from "@data/site";
 
           <li><a href="#finder">Пошук квартир</a></li>
 
-          <li><a href="#location">Локація</a></li>
+          <li><a href="#location">Локація</a></li> -->
 
-        </ul>
+       
 
       </nav>
 

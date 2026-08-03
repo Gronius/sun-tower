@@ -1,6 +1,7 @@
 ---
 import { cta } from "@data/cta";
-import Button from "@components/ui/Button.astro";
+
+import LeadForm from "@components/ui/LeadForm.astro";
 ---
 
 <section class="cta" id="consultation">
@@ -25,74 +26,16 @@ import Button from "@components/ui/Button.astro";
 
       </div>
 
-      <form class="cta__form">
 
-        <div class="cta__field">
+    <div class="cta__form">
 
-          <label for="name">
-            Ім'я
-          </label>
+      <LeadForm
+        source="cta"
+       />
 
-          <input
-            id="name"
-            type="text"
-            placeholder="Ваше ім'я"
-          />
+    </div>
 
-        </div>
-
-        <div class="cta__field">
-
-          <label for="phone">
-            Телефон
-          </label>
-
-          <input
-            id="phone"
-            type="tel"
-            placeholder="+421..."
-          />
-
-        </div>
-
-        <div class="cta__field">
-
-          <label for="email">
-            Email
-          </label>
-
-          <input
-            id="email"
-            type="email"
-            placeholder="example@email.com"
-          />
-
-        </div>
-
-        <div class="cta__field">
-
-          <label for="message">
-            Коментар
-          </label>
-
-          <textarea
-            id="message"
-            rows="4"
-            placeholder="Ваше повідомлення (необов'язково)"
-          ></textarea>
-
-        </div>
-
-        <Button
-          text={cta.buttonText}
-          type="submit"
-        />
-
-        <p class="cta__privacy">
-          {cta.privacyText}
-        </p>
-
-      </form>
+     
 
     </div>
 
