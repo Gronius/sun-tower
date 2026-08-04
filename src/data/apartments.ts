@@ -1,7 +1,7 @@
 export type ApartmentStatus =
-  | "available"
-  | "reserved"
-  | "sold";
+  | "Вільна"
+  | "Заброньована"
+  | "Продана";
 
 export interface Apartment {
   id: number;
@@ -29,7 +29,7 @@ export const apartments: Apartment[] = [
     floor: 2,
     rooms: 1,
     area: 42.8,
-    status: "available",
+    status: "Вільна",
     plan: "/images/plans/plan-01.jpg",
   },
 
@@ -40,7 +40,7 @@ export const apartments: Apartment[] = [
     floor: 3,
     rooms: 2,
     area: 58.4,
-    status: "reserved",
+    status: "Заброньована",
     plan: "/images/plans/plan-02.jpg",
   },
 
@@ -51,7 +51,7 @@ export const apartments: Apartment[] = [
     floor: 5,
     rooms: 3,
     area: 74.2,
-    status: "available",
+    status: "Вільна",
     plan: "/images/plans/plan-03.jpg",
     
   },
@@ -63,7 +63,7 @@ export const apartments: Apartment[] = [
     floor: 2,
     rooms: 4,
     area: 98.5,
-    status: "sold",
+    status: "Продана",
     plan: "/images/plans/plan-04.jpg",
   },
 
@@ -74,7 +74,7 @@ export const apartments: Apartment[] = [
     floor: 2,
     rooms: 4,
     area: 78.5,
-    status: "available",
+    status: "Вільна",
     plan: "",
   },
 
@@ -85,7 +85,7 @@ export const apartments: Apartment[] = [
     floor: 6,
     rooms: 3,
     area: 74.2,
-    status: "available",
+    status: "Вільна",
     plan: "/images/plans/plan-03.jpg",
     
   },

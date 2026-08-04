@@ -1,4 +1,6 @@
 
+import { populateFinderFilters } from "./finder/populate-filters";
+
 import {
   filterApartments,
   type FinderFilters,
@@ -36,6 +38,8 @@ const resultsList =
 ) {
   return;
 }
+
+populateFinderFilters();
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();

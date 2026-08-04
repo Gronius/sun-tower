@@ -1,0 +1,37 @@
+---
+import FloorSelector
+  from "@components/ui/FloorSelector.astro";
+
+import FloorSchemeCanvas
+  from "@components/ui/FloorSchemeCanvas.astro";
+---
+
+
+<section
+  class="floor-schemes"
+  id="floor-schemes"
+>
+  <div class="container">
+
+    <div class="floor-schemes__heading">
+
+      <span class="floor-schemes__badge">
+        Поверхи
+      </span>
+
+      <h2 class="floor-schemes__title">
+        Інтерактивні плани поверхів
+      </h2>
+
+      <p class="floor-schemes__description">
+        Оберіть поверх і натисніть на квартиру, щоб переглянути її характеристики.
+      </p>
+
+    </div>
+
+    <FloorSelector />
+
+    <FloorSchemeCanvas />
+
+  </div>
+</section>

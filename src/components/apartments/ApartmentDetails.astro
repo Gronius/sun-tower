@@ -1,0 +1,58 @@
+---
+import LeadForm from "@components/ui/LeadForm.astro";
+
+
+// interface Props {
+//   number: string;
+//   status: string;
+//   rooms: number;
+//   area: number;
+//   floor: number;
+//   section: number;
+// }
+
+// const {
+//   number,
+//   status,
+//   rooms,
+//   area,
+//   floor,
+//   section,
+// } = Astro.props;
+---
+
+<article class="apartment-details">
+
+  <header class="apartment-details__header">
+
+    <h2
+      id="modal-apartment-number"
+    >
+      A-302
+    </h2>
+
+    <span
+      id="modal-apartment-status"
+    >
+      Заброньована
+    </span>
+
+  </header>
+
+  <ul class="apartment-details__info">
+
+    <li id="modal-apartment-rooms">кімнати</li>
+
+    <li id="modal-apartment-area"> м²</li>
+
+    <li id="modal-apartment-floor"> поверх</li>
+
+    <li id="modal-apartment-section">Секція</li>
+
+  </ul>
+
+  <LeadForm
+    source="modal"
+  />
+
+</article>

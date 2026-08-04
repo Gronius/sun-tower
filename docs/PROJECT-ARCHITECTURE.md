@@ -5,7 +5,9 @@ src/
 │   ├── icons/
 │   ├── images/
 ├── components/
-│   ├── ui/
+
+│   └── ui/
+│       └── Modal.astro
 │   │   └── Button.astro
 │   │
 │   ├── common/
@@ -44,6 +46,9 @@ src/
 │       ├── index.astro
 
 ├── scripts/
+    ├── modal/
+        └── apartment-modal.ts    
+│   ├── modal.ts
 │   ├── finder.ts
 │   ├── main.ts
     ├── header.ts
@@ -73,7 +78,8 @@ src/
 │       ├── _base.scss
 │       └── _index.scss
 │
-│   ├──components/
+│   └── components/
+│       └── _modal.scss
 │       ├── _button.scss
 │       ├── _lead-form.scss
 │       ├── _logo.scss

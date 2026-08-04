@@ -11,12 +11,17 @@ const {
   href,
   type = "button",
   disabled = false,
-} = Astro.props as Props;
+  ...attrs
+} = Astro.props as Props & Record<string, unknown>;
 ---
 
 {
   href ? (
-    <a class="button" href={href}>
+    <a
+      class="button"
+      href={href}
+      {...attrs}
+    >
       {text}
     </a>
   ) : (
@@ -24,6 +29,7 @@ const {
       class="button"
       type={type}
       disabled={disabled}
+      {...attrs}
     >
       {text}
     </button>

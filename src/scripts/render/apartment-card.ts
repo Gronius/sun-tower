@@ -1,10 +1,28 @@
-import type { Apartment } from "@data/apartments";
+// import type { Apartment } from "@data/apartments";
 
-const statusLabels = {
-  available: "Вільна",
-  reserved: "Заброньована",
-  sold: "Продана",
-};
+// const statusLabels = {
+//   available: "Вільна",
+//   reserved: "Заброньована",
+//   sold: "Продана",
+// };
+
+import type {
+  Apartment,
+  ApartmentStatus,
+} from "@data/apartments";
+
+function getStatusClass(status: ApartmentStatus): string {
+  switch (status) {
+    case "Вільна":
+      return "available";
+
+    case "Заброньована":
+      return "reserved";
+
+    case "Продана":
+      return "sold";
+  }
+}
 
 export function createApartmentCard(apartment: Apartment): string {
   return `
@@ -16,8 +34,10 @@ export function createApartmentCard(apartment: Apartment): string {
           ${apartment.number}
         </h3>
 
-        <span class="finder-card__status finder-card__status--${apartment.status}">
-          ${statusLabels[apartment.status]}
+      
+
+         <span class="finder-card__status finder-card__status--${getStatusClass(apartment.status)}">
+         ${apartment.status}
         </span>
 
       </div>

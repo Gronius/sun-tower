@@ -1,0 +1,29 @@
+<div   class="modal"   id="modal"   aria-hidden="true">
+  <div class="modal__overlay">
+
+    <div
+      class="modal__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+
+      <button
+        class="modal__close"
+        type="button"
+        aria-label="Закрити модальне вікно"
+      >
+        ✕
+      </button>
+
+      <div class="modal__content">
+
+        <slot />
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
