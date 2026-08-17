@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg"
+<!-- <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 600 420"
      width="600"
      height="420">
@@ -10,34 +10,37 @@
   <rect x="40" y="40" width="160" height="140"
         fill="#ffffff"
         stroke="#333"
-        stroke-width="2"/>
+        stroke-width="2"
+      data-apartment-id="7"/>
 
   <text x="120" y="115"
         text-anchor="middle"
         font-size="22">
-    A-401
+    B-101
   </text>
 
   <rect x="220" y="40" width="160" height="140"
         fill="#ffffff"
         stroke="#333"
-        stroke-width="2"/>
+        stroke-width="2"
+         data-apartment-id="8"/>
 
   <text x="300" y="115"
         text-anchor="middle"
         font-size="22">
-    A-402
+    B-102
   </text>
 
   <rect x="400" y="40" width="160" height="140"
         fill="#ffffff"
         stroke="#333"
-        stroke-width="2"/>
+        stroke-width="2"
+         data-apartment-id="9"/>
 
   <text x="480" y="115"
         text-anchor="middle"
         font-size="22">
-    A-403
+    B-103
   </text>
 
   <!-- Нижній ряд -->
@@ -45,34 +48,37 @@
   <rect x="40" y="220" width="240" height="140"
         fill="#ffffff"
         stroke="#333"
-        stroke-width="2"/>
+        stroke-width="2"
+         data-apartment-id="10"/>
 
   <text x="160" y="295"
         text-anchor="middle"
         font-size="22">
-    A-404
+    B-104
   </text>
 
   <rect x="320" y="220" width="120" height="140"
         fill="#ffffff"
         stroke="#333"
-        stroke-width="2"/>
+        stroke-width="2"
+         data-apartment-id="11"/>
 
   <text x="380" y="295"
         text-anchor="middle"
         font-size="22">
-    A-405
+    B-105
   </text>
 
   <rect x="460" y="220" width="100" height="140"
         fill="#ffffff"
         stroke="#333"
-        stroke-width="2"/>
+        stroke-width="2"
+         data-apartment-id="12"/>
 
   <text x="510" y="295"
         text-anchor="middle"
         font-size="20">
-    A-406
+    B-106
   </text>
 
-</svg>
+</svg> -->

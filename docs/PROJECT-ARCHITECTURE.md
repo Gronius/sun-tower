@@ -5,15 +5,16 @@ src/
 │   ├── icons/
 │   ├── images/
 ├── components/
-
-│   └── ui/
-│       └── Modal.astro
-│   │   └── Button.astro
+│   ├── apartments/
+│   │   ├── ApartmentsDetails.astro
 │   │
 │   ├── common/
 │   │   ├── Logo.astro
 │   │   └── Navigation.astro
 │   │   └── SectionHeading.astro
+│   │
+│   ├── interactive-map/
+│   │   ├── BuildingMap.astro
 │   │
 │   └── sections/
 │       ├── About.astro
@@ -22,11 +23,20 @@ src/
 │       └── Features.astro
 │       └── Finder.astro
 │       └── FloorPlans.astro
+│       └── FloorSchemes.astro
 │       └── Footer.astro
 │       ├── Gallery.astro
 │       ├── Header.astro
 │       ├── Hero.astro
 │       ├── Location.astro
+
+│   └── ui/
+│   │   └── ApartmentPlanLightbox.astro
+│   │   └── Button.astro
+│   │   └── FloorSchemeCanvas.astro
+│   │   └── FloorSelector.astro
+│   │   └── LeadForm.astro
+│   │   └── Modal.astro
 │
 ├── data/
 │   ├── about.ts

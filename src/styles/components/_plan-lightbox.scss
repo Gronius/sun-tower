@@ -1,0 +1,141 @@
+/* ================================
+   Apartment Plan Lightbox
+================================ */
+
+.plan-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+.plan-lightbox__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+.plan-lightbox__dialog {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 1400px);
+  height: min(100%, 92vh);
+  transform: scale(0.96);
+  transition: transform 0.3s ease;
+}
+
+.plan-lightbox__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.plan-lightbox__image img {
+  display: block;
+  max-width: 95vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.plan-lightbox__close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-dark);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+.plan-lightbox__close:hover {
+  background: #f2f2f2;
+  transform: rotate(90deg);
+}
+
+/* ================================
+   Open state
+================================ */
+.plan-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.plan-lightbox.is-open .plan-lightbox__dialog {
+  transform: scale(1);
+}
+/* ================================
+   Body lock
+================================ */
+body.plan-lightbox-open {
+  overflow: hidden;
+}
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 768px) {
+  .plan-lightbox {
+    padding: 16px;
+  }
+
+  .plan-lightbox__dialog {
+    width: 100%;
+    height: 100%;
+  }
+
+  .plan-lightbox__image img {
+    max-width: 100%;
+    max-height: 85vh;
+
+    border-radius: 6px;
+  }
+
+  .plan-lightbox__close {
+    top: 0;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-lightbox {
+    padding: 10px;
+  }
+
+  .plan-lightbox__image img {
+    max-height: 82vh;
+  }
+}

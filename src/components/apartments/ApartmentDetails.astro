@@ -1,58 +1,80 @@
 ---
 import LeadForm from "@components/ui/LeadForm.astro";
 
-
-// interface Props {
-//   number: string;
-//   status: string;
-//   rooms: number;
-//   area: number;
-//   floor: number;
-//   section: number;
-// }
-
-// const {
-//   number,
-//   status,
-//   rooms,
-//   area,
-//   floor,
-//   section,
-// } = Astro.props;
+import ApartmentPlanLightbox from "@components/ui/ApartmentPlanLightbox.astro";
 ---
+
 
 <article class="apartment-details">
 
   <header class="apartment-details__header">
-
-    <h2
-      id="modal-apartment-number"
-    >
-      A-302
-    </h2>
-
-    <span
-      id="modal-apartment-status"
-    >
-      Заброньована
-    </span>
-
+    <div class="apartment-details__title">
+      <h2 id="modal-apartment-number">A-302</h2>
+      <span
+        id="modal-apartment-status"
+        class="apartment-details__status"
+      >
+        Вільна
+      </span>
+    </div>
   </header>
 
-  <ul class="apartment-details__info">
+  <section class="apartment-details__specs">
+    <ul class="apartment-details__info">
+      <li>
+        <span>Кімнати:</span>
+        <strong id="modal-apartment-rooms">1</strong>
+      </li>
 
-    <li id="modal-apartment-rooms">кімнати</li>
+      <li>
+        <span>Площа:</span>
+        <strong id="modal-apartment-area">42.8 м²</strong>
+      </li>
 
-    <li id="modal-apartment-area"> м²</li>
+      <li>
+        <span>Поверх:</span>
+        <strong id="modal-apartment-floor">1 поверх</strong>
+      </li>
 
-    <li id="modal-apartment-floor"> поверх</li>
+      <li>
+        <span>Секція:</span>
+        <strong id="modal-apartment-section">Секція B</strong>
+      </li>
 
-    <li id="modal-apartment-section">Секція</li>
+      <li>
+        <span>Ціна:</span>
+        <strong id="modal-apartment-price">145 000 €</strong>
+      </li>
+    </ul>
+  </section>
 
-  </ul>
+  <section class="apartment-details__plan">
+    <h3>Планування</h3>
 
-  <LeadForm
-    source="modal"
-  />
+    <div class="apartment-details__plan-image">
+      <img
+        id="modal-apartment-plan"
+        src="/images/plans/plan-01.jpg"
+        alt="Планування квартири"
+        width="600"
+        height="400"
+      />
+    </div>
+  </section>
+
+<section class="apartment-details__cta">
+  <div class="apartment-details__cta-head">
+    <h3>Запишіться на перегляд</h3>
+
+    <p>
+      Залиште свої контактні дані — ми зв’яжемося з вами
+      та підберемо зручний час для перегляду.
+    </p>
+  </div>
+
+  <LeadForm source="modal" />
+</section>
+
+<ApartmentPlanLightbox />
 
 </article>

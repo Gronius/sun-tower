@@ -4,19 +4,20 @@ import { floorSchemes } from "@data/floor-schemes";
 const currentScheme = floorSchemes[0];
 ---
 
-<div
-  class="floor-scheme"
-  data-floor-container
->
-
-  <div class="floor-scheme__image">
-
-    <img
-      src={currentScheme.svg}
-      alt={currentScheme.title}
-      data-floor-image
-    />
-
+<div class="floor-scheme" >
+  <div
+    class="floor-scheme__image"
+    data-floor-container
+    data-floor-svg={currentScheme.svg}
+  >
   </div>
 
+    <div
+    class="floor-scheme__tooltip"
+    data-apartment-tooltip
+    aria-hidden="true"
+  ></div>
+
 </div>
+
+

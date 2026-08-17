@@ -18,7 +18,7 @@ export function filterApartments(filters: FinderFilters) {
 
     if (
       filters.section &&
-      apartment.section !== Number(filters.section)
+      apartment.section !== String(filters.section)
     ) {
       return false;
     }

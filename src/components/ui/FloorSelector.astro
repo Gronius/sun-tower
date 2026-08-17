@@ -1,25 +1,21 @@
 ---
-import { floorSchemes } from "@data/floor-schemes";
+import { floors } from "@data/floors";
 ---
 
 <div class="floor-selector">
-
   {
-    floorSchemes.map((scheme, index) => (
-
+    floors.map((floor, index) => (
       <button
         class:list={[
           "floor-selector__button",
           index === 0 && "is-active",
         ]}
         type="button"
-        data-floor-id={scheme.id}
-         data-floor={scheme.floor}
+        data-floor={floor.floor}
+        data-section={floor.section}
       >
-        {scheme.title}
+        {floor.section} — {floor.floor} 
       </button>
-
     ))
   }
-
 </div>

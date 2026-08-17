@@ -1,0 +1,302 @@
+
+.apartment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ================================
+   Header
+================================ */
+
+.apartment-details__header {
+  padding-right: 48px;
+  // padding-bottom: 20px;
+
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.apartment-details__title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.apartment-details__title h2 {
+  margin: 0;
+
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.apartment-details__status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  background: #d9f7be;
+
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+/* ================================
+   Apartment info
+================================ */
+
+.apartment-details__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin: 0;
+  padding: 0;
+  // padding-bottom: 1.25rem;
+
+  list-style: none;
+}
+
+.apartment-details__info li {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  min-height: 24px;
+}
+
+.apartment-details__info li::after {
+  content: "";
+  flex: 1;
+
+  border-bottom: 1px dotted currentColor;
+  opacity: 0.4;
+
+  order: 2;
+}
+
+.apartment-details__info li span {
+  order: 1;
+  color: var(--color-dark);
+}
+
+.apartment-details__info li strong {
+  order: 3;
+
+  white-space: nowrap;
+  font-weight: 600;
+}
+/* Ціна */
+
+.apartment-details__info li:last-child strong {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ================================
+   Plan
+================================ */
+
+.apartment-details__plan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin: 0;
+}
+
+.apartment-details__plan h3,
+.apartment-details__cta h3 {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.apartment-details__plan-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 280px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+
+  background: #f7f7f7;
+}
+
+.apartment-details__plan-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+    max-height: 520px;
+
+  object-fit: contain;
+
+  // transition: transform var(--transition);
+  transition: transform 0.4s ease;
+
+  cursor: zoom-in;
+}
+
+/* ================================
+   CTA
+================================ */
+
+.apartment-details__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.apartment-details__cta-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.apartment-details__cta h3 {
+  margin: 0;
+
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.apartment-details__cta p {
+  max-width: 560px;
+
+  margin: 0;
+
+  color: rgba(0, 0, 0, 0.65);
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+@media (hover: hover) {
+  .apartment-details__plan-image:hover img {
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 768px) {
+  .apartment-details {
+    gap: 28px;
+  }
+
+  .apartment-details__title h2 {
+    font-size: 30px;
+  }
+
+  .apartment-details__plan-image {
+    min-height: 240px;
+  }
+
+  .apartment-details__plan-image img {
+    max-height: 460px;
+  }
+}
+
+@media (max-width: 480px) {
+  .apartment-details {
+    gap: 24px;
+  }
+
+   .apartment-details__header {
+    padding-right: 42px;
+    padding-bottom: 16px;
+  }
+
+  .apartment-details__title {
+    gap: 10px;
+  }
+
+  .apartment-details__title h2 {
+    font-size: 28px;
+  }
+
+  .apartment-details__status {
+    padding: 6px 11px;
+    font-size: 13px;
+  }
+  /* Info */
+  .apartment-details__info {
+    gap: 10px;
+  }
+
+  .apartment-details__info li {
+    gap: 10px;
+  }
+
+    .apartment-details__info li strong {
+    white-space: nowrap;
+  }
+
+  .apartment-details__info li:last-child strong {
+    font-size: 18px;
+  }
+
+    /* Plan */
+
+  .apartment-details__plan {
+  gap: 12px;
+}
+
+.apartment-details__plan h3 {
+  font-size: 18px;
+}
+
+.apartment-details__plan-image {
+  min-height: 220px;
+  border-radius: 10px;
+}
+
+.apartment-details__plan-image img {
+  max-height: 420px;
+}
+  /* CTA */
+.apartment-details__cta {
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.apartment-details__cta h3 {
+  font-size: 20px;
+}
+
+.apartment-details__cta p {
+  font-size: 14px;
+}
+}
+
+@media (max-width: 360px) {
+  .apartment-details__info li {
+    gap: 6px;
+  }
+
+  .apartment-details__info li span,
+  .apartment-details__info li strong {
+    font-size: 14px;
+  }
+
+  .apartment-details__info li:last-child strong {
+    font-size: 17px;
+  }
+}

@@ -34,7 +34,7 @@ function populateSections(): void {
 
   const sections = [
     ...new Set(apartments.map((item) => item.section)),
-  ].sort((a, b) => a - b);
+  ].sort();
 
   sections.forEach((section) => {
     const option = document.createElement("option");

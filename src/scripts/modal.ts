@@ -2,7 +2,34 @@ import { apartments } from "@data/apartments";
 
 import { fillApartmentModal } from "./modal/apartment-modal";
 
+export function openModal(): void {
+  const modal = document.getElementById("modal");
 
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+
+  document.body.classList.add("modal-open");
+  // document.documentElement.classList.add("modal-open");
+  
+}
+
+export function closeModal(): void {
+  const modal = document.getElementById("modal");
+
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+
+  document.body.classList.remove("modal-open");
+  // document.documentElement.classList.remove("modal-open");
+}
 
 export function initModal(): void {
   const modal = document.getElementById("modal");
@@ -23,19 +50,6 @@ export function initModal(): void {
   const modalTriggers =
   document.querySelectorAll<HTMLElement>("[data-modal-open]");
 
-function openModal() {
-  modalElement.classList.add("is-open");
-  modalElement.setAttribute("aria-hidden", "false");
-
-  document.body.classList.add("modal-open");
-}
-
-function closeModal() {
-  modalElement.classList.remove("is-open");
-  modalElement.setAttribute("aria-hidden", "true");
-
-  document.body.classList.remove("modal-open");
-}
 
   closeButton?.addEventListener("click", closeModal);
 
@@ -61,16 +75,24 @@ function closeModal() {
   fillApartmentModal(apartment);
 
   
-
-    // console.log(apartment);
-
     openModal();
   });
 });
 
+ 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeModal();
-    }
-  });
+  if (event.key !== "Escape") {
+    return;
+  }
+
+  const lightbox = document.querySelector(
+    ".plan-lightbox.is-open"
+  );
+
+  if (lightbox) {
+    return;
+  }
+
+  closeModal();
+});
 }

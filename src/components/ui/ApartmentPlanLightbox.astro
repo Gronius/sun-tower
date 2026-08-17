@@ -1,0 +1,106 @@
+<div
+  class="plan-lightbox"
+  id="plan-lightbox"
+  aria-hidden="true"
+>
+  <div class="plan-lightbox__overlay"></div>
+
+  <div
+    class="plan-lightbox__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Збільшений план квартири"
+  >
+    <button
+      class="plan-lightbox__close"
+      type="button"
+      aria-label="Закрити планування"
+    >
+      ✕
+    </button>
+
+    <div class="plan-lightbox__image">
+      <img
+        id="plan-lightbox-image"
+        src="/images/plans/plan-01.jpg"
+        alt="Збільшений план квартири"
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  const lightbox = document.querySelector<HTMLElement>("#plan-lightbox");
+  const lightboxImage =
+    document.querySelector<HTMLImageElement>("#plan-lightbox-image");
+
+  const closeButton =
+    document.querySelector<HTMLButtonElement>(".plan-lightbox__close");
+
+  const overlay =
+    document.querySelector<HTMLElement>(".plan-lightbox__overlay");
+
+  const apartmentPlan =
+    document.querySelector<HTMLImageElement>("#modal-apartment-plan");
+
+  if (
+    lightbox &&
+    lightboxImage &&
+    closeButton &&
+    overlay &&
+    apartmentPlan
+  ) {
+    const openLightbox = () => {
+      lightboxImage.src = apartmentPlan.src;
+      lightboxImage.alt = apartmentPlan.alt;
+
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+
+     document.body.classList.add("plan-lightbox-open");
+    // document.documentElement.classList.add("plan-lightbox-open");
+
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+
+     document.body.classList.remove("plan-lightbox-open");
+      // document.documentElement.classList.remove("plan-lightbox-open");
+
+    };
+
+    //apartmentPlan.addEventListener("click", openLightbox);
+    apartmentPlan.addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  openLightbox();
+});
+
+
+
+    // closeButton.addEventListener("click", closeLightbox);
+  closeButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  closeLightbox();
+});
+
+    // overlay.addEventListener("click", closeLightbox);
+    overlay.addEventListener("click", (event) => {
+  event.stopPropagation();
+  closeLightbox();
+});
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        lightbox.classList.contains("is-open")
+      ) {
+        event.stopPropagation();
+        closeLightbox();
+      }
+    });
+  }
+</script>

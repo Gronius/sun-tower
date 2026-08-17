@@ -1,6 +1,8 @@
 
 import { populateFinderFilters } from "./finder/populate-filters";
 
+import { initFinderNavigation } from "./finder/finder-navigation";
+
 import {
   filterApartments,
   type FinderFilters,
@@ -8,10 +10,10 @@ import {
 
 import { createApartmentCard } from "./render/apartment-card";
 
+import { initFinderSelection } from "./finder/finder-selection";
+
 export function initFinder(): void {
   const form = document.querySelector<HTMLFormElement>("#finder-form");
-
-  // const results = document.querySelector<HTMLElement>(".finder__results");
 
 const resultsCount =
   document.querySelector<HTMLElement>(
@@ -28,9 +30,7 @@ const resultsList =
     ".finder__reset"
   );
 
- 
-  // if (!form || !results) return;
-  if (
+   if (
   !form ||
   !resultsCount ||
   !resultsList ||
@@ -40,17 +40,11 @@ const resultsList =
 }
 
 populateFinderFilters();
+initFinderSelection();
+initFinderNavigation();
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    resetButton.addEventListener("click", () => {
-  form.reset();
-
-  resultsCount.textContent = "";
-
-  resultsList.innerHTML = "";
-});
 
     const formData = new FormData(form);
 
@@ -83,8 +77,13 @@ resultsList.innerHTML =
   filteredApartments
     .map(createApartmentCard)
     .join("");
-
       
+  });
+
+  resetButton.addEventListener("click", () => {
+     form.reset();
+    resultsCount.textContent = "";
+    resultsList.innerHTML = "";
   });
 }
 
