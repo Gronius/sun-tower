@@ -35,7 +35,8 @@ export const location: LocationData = {
     lng: 19.134740,
   },
 
-  map: "/images/map/map-placeholder.jpg",
+  map: "/maps/map-placeholder.jpg",
+ 
 
   infrastructure: [
     {
