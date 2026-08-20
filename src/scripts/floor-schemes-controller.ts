@@ -18,7 +18,6 @@ const statusLabels = {
   sold: "Продана",
 } as const;
 
-
 /* * Знаходимо квартири конкретного поверху */
 function getFloorApartments(
   section: "A" | "B",
@@ -411,94 +410,183 @@ if (apartmentId !== undefined) {
 }
 
 /*  * Головний контролер  */
+
 export function initFloorSchemes(): void {
 
   let activeFloor: {
-  section: "A" | "B";
-  floor: number;
-} | null = null;
+    section: "A" | "B";
+    floor: number;
+  } | null = null;
+
+  const floorSchemesSection =
+    document.querySelector<HTMLElement>(
+      "#floor-schemes"
+    );
+
+  const floorScheme =
+    document.querySelector<HTMLElement>(
+      ".floor-scheme"
+    );
+
+  const closeFloorScheme = (): void => {
+
+    const container =
+      document.querySelector<HTMLElement>(
+        "[data-floor-container]"
+      );
+
+    const tooltip =
+      document.querySelector<HTMLElement>(
+        "[data-apartment-tooltip]"
+      );
+
+    if (container) {
+      container.innerHTML = "";
+    }
+
+    if (tooltip) {
+      tooltip.classList.remove("is-visible");
+      tooltip.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+      tooltip.removeAttribute("data-status");
+    }
+
+    if (floorSchemesSection) {
+      floorSchemesSection.classList.remove(
+        "is-visible"
+      );
+    }
+
+    if (floorScheme) {
+      floorScheme.classList.remove(
+        "is-visible"
+      );
+    }
+
+    activeFloor = null;
+  };
+
+  const closeButton =
+    document.querySelector<HTMLButtonElement>(
+      "[data-floor-scheme-close]"
+    );
+
+  closeButton?.addEventListener(
+    "click",
+    closeFloorScheme
+  );
 
   window.addEventListener(
     "floor:selected",
     (event) => {
+
       const customEvent =
         event as CustomEvent<{
           section: "A" | "B";
           floor: number;
           apartmentId?: number;
         }>;
+
       const {
         section,
         floor,
         apartmentId,
       } = customEvent.detail;
-  // додати перевірку
-      // Повторний клік по вже відкритому поверху
+
+      /* ================================
+         Повторний клік по активному поверху
+      ================================= */
+
       if (
         activeFloor &&
         activeFloor.section === section &&
         activeFloor.floor === floor
       ) {
-        const container =
-          document.querySelector<HTMLElement>(
-            "[data-floor-container]"
-          );
-        const tooltip =
-          document.querySelector<HTMLElement>(
-            "[data-apartment-tooltip]"
-          );
-        if (container) {
-          container.innerHTML = "";
-        }
-        if (tooltip) {
-          tooltip.classList.remove("is-visible");
-          tooltip.setAttribute(
-            "aria-hidden",
-            "true"
-          );
-        }
-        activeFloor = null;
+        closeFloorScheme();
         return;
       }
-//       /*        * Знаходимо поверх       */
+
+      /* ================================
+         Знаходимо поверх
+      ================================= */
+
       const floorData =
         floors.find(
           (item) =>
             item.section === section &&
             item.floor === floor
         );
+
       if (!floorData) {
         console.warn(
           `Floor not found: ${section}-${floor}`
         );
+
         return;
       }
-//       /*       * Знаходимо тип схеми       */
+
+      /* ================================
+         Знаходимо тип схеми
+      ================================= */
+
       const scheme =
         floorSchemes.find(
           (item) =>
             item.id === floorData.schemeId
         );
+
       if (!scheme) {
         console.warn(
           `Scheme not found: ${floorData.schemeId}`
         );
+
         return;
       }
-      // Запам'ятовуємо активний поверх
+
+      /* ================================
+         Показуємо секцію та план
+      ================================= */
+
+      floorSchemesSection?.classList.add(
+        "is-visible"
+      );
+
+      floorScheme?.classList.add(
+        "is-visible"
+      );
+
+      /* ================================
+         Запам'ятовуємо активний поверх
+      ================================= */
+
       activeFloor = {
         section,
         floor,
       };
-//   Завантажуємо типовий SVG,  але передаємо section + floor    */
+
+      /* ================================
+         Завантажуємо SVG
+      ================================= */
+
       void loadFloorSvg(
         scheme.svg,
         section,
         floor,
         apartmentId
       );
-
     }
   );
-
 }
+
+
+
+
+
+
+
+
+
+
+

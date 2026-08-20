@@ -1,21 +1,28 @@
 ---
-import SectionHeading from '../common/SectionHeading.astro' ;
+// import SectionHeading from '../common/SectionHeading.astro' ;
 
 import buildingOverlay from '/maps/building-overlay.svg?raw';
 ---
 
 <section class="building-map-section">
   <div class="container">
+ 
+    <div class="building-map-section__heading">
 
-    <SectionHeading
-      badge="Вибір поверху"
-      title="Оберіть поверх"
-    />
+      <span class="building-map-section__badge">
+       Вибір поверху
+      </span>
 
-    <p class="building-map-section__description">
+      <h2 class="building-map-section__title">
+        Оберіть поверх
+      </h2>
+
+      <p class="building-map-section__description">
       Наведіть курсор на поверх будинку, щоб переглянути його план
       та доступні квартири.
-    </p>
+      </p>
+
+    </div>
 
     <div class="building-map">
       <img
@@ -38,6 +45,33 @@ import buildingOverlay from '/maps/building-overlay.svg?raw';
 <style>
   .building-map-section {
   padding-block: 80px;
+  }
+
+  .building-map-section__heading{
+    max-width: 44rem;
+    margin-inline: auto;
+    margin-bottom: var(--space-8);
+
+    text-align: center;
+  }
+  .building-map-section__badge{
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-full);
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  .building-map-section__title {
+    margin-bottom: var(--space-4);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+  }
+  .building-map-section__description{
+    color: var(--color-text-light);
+    line-height: 1.8;
 }
   .building-map {
     position: relative;

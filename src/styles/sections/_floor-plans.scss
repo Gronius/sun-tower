@@ -84,6 +84,52 @@
 
   border-color: var(--color-primary);
 }
+
+.floor-plans__option.is-active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* Варіанти площі */
+.floor-plans__variants {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.floor-plans__variant {
+  padding: .7rem .75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  color: var(--color-text);
+  font-size: .95rem;
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.floor-plans__variant:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.floor-plans__variant.is-active {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+
+
 .floor-plans__content {
   display: grid;
   grid-template-columns: 1fr 320px;
@@ -151,6 +197,9 @@
   .floor-plans__info .button {
     width: 100%;
     justify-content: center;
+  }
+    .floor-plans__variants {
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }

@@ -5,6 +5,7 @@ import { initBackToTop } from "./back-to-top";
 import { initFinder } from "./finder";
 import { initModal } from "./modal";
 import { initFloorSchemes } from "./floor-schemes-controller";
+import { initFloorPlans } from "./floor-plans-controller";
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
@@ -14,4 +15,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initFinder();
   initModal()
   initFloorSchemes();
+  initFloorPlans();
 });

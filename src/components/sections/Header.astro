@@ -1,7 +1,9 @@
+
 ---
 import Logo from "@components/common/Logo.astro";
 import Navigation from "@components/common/Navigation.astro";
 import Button from "@components/ui/Button.astro";
+import { navigation } from "@data/navigation";
 ---
 
 <header class="header site-header">
@@ -13,10 +15,58 @@ import Button from "@components/ui/Button.astro";
       <Navigation />
 
       <Button
-  text="Обрати квартиру"
-  href="#apartments"
-/>
+        text="Обрати квартиру"
+        href="#apartments"
+      />
+
+      <!-- Mobile menu toggle -->
+      <button
+        class="site-header__menu-toggle"
+        type="button"
+        aria-label="Відкрити меню"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
   </div>
+
+  <!-- Mobile menu -->
+  <div
+    class="site-header__mobile-menu"
+    id="mobile-menu"
+    aria-hidden="true"
+  >
+    <nav
+      class="site-header__mobile-navigation"
+      aria-label="Мобільна навігація"
+    >
+      <ul class="site-header__mobile-list">
+        {
+          navigation.map((item) => (
+            <li class="site-header__mobile-item">
+              <a
+                class="site-header__mobile-link"
+                href={item.href}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <Button
+      text="Обрати квартиру"
+      href="#apartments"
+    />
+  </div>
 </header>
+
+
+

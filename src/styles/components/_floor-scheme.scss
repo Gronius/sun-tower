@@ -1,3 +1,72 @@
+// floor-schemes  // стилі секції
+
+.floor-schemes {
+  padding-block: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  max-height: 0;
+  overflow: hidden;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease,
+    max-height 0.5s ease,
+    padding 0.5s ease;
+
+  &.is-visible {
+    padding-block: 80px;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    max-height: 3000px;
+  }
+
+
+
+  &__heading {
+    max-width: 44rem;
+    margin-inline: auto;
+    margin-bottom: var(--space-8);
+
+    text-align: center;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    margin-bottom: var(--space-4);
+
+    border-radius: var(--radius-full);
+
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+
+    font-weight: 600;
+  }
+
+  &__title {
+    margin-bottom: var(--space-4);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+  }
+
+  &__description {
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+}
+
+// floor-scheme   // існуючі стилі SVG та tooltip
+
+
 .floor-scheme {
   position: relative;
 
@@ -63,8 +132,6 @@
   }
 }
 
-
-
 .floor-scheme__tooltip-status {
   font-weight: 600;
 }
@@ -82,4 +149,49 @@
 .floor-scheme__tooltip[data-status="sold"]
   .floor-scheme__tooltip-status {
   color: #666;
+}
+
+@media (max-width: 767px) {
+  .floor-schemes {
+    padding-block: var(--space-8);
+
+    &__heading {
+      margin-bottom: var(--space-6);
+    }
+  }
+}
+
+.floor-scheme__close {
+  display: none;
+
+  margin-top: var(--space-5);
+  margin-inline: auto;
+
+  padding: 0.75rem 1.25rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: var(--color-white);
+  color: var(--color-dark);
+
+  font: inherit;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.floor-scheme__close:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.floor-scheme.is-visible .floor-scheme__close {
+  display: block;
 }

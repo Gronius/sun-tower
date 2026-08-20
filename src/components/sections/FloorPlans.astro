@@ -7,52 +7,62 @@ const currentPlan = floorPlans[0];
 
 <section class="floor-plans" id="floor-plans">
   <div class="container">
-
     <div class="floor-plans__heading">
-
       <span class="floor-plans__badge">
         Планування
       </span>
-
       <h2 class="floor-plans__title">
         Планування квартир
       </h2>
-
       <p class="floor-plans__description">
         Ознайомтеся з доступними типами квартир та оберіть оптимальний варіант для себе.
       </p>
-
     </div>
-
     <div class="floor-plans__inner">
-
       <aside class="floor-plans__sidebar">
-
         <h3 class="floor-plans__subtitle">
           Тип квартири
         </h3>
 
         <ul class="floor-plans__list">
 
-          {
-            floorPlans.map((plan) => (
+          <li>
+            <button
+              class="floor-plans__option is-active"
+              type="button"
+              data-rooms="1">1-кімнатна
+            </button>
+          </li>
 
-              <li>
+          <li>
+            <button
+              class="floor-plans__option"
+              type="button"
+              data-rooms="2">2-кімнатна
+            </button>
+          </li>
 
-                <button
-                  class="floor-plans__option"
-                  type="button"
-                >
-                  {plan.rooms}-кімнатна
-                </button>
+          <li>
+            <button
+              class="floor-plans__option"
+              type="button"
+              data-rooms="3">3-кімнатна
+            </button>
+          </li>
 
-              </li>
-
-            ))
-          }
-
+          <li>
+            <button
+              class="floor-plans__option"
+              type="button"
+              data-rooms="4">4-кімнатна
+            </button>
+          </li>
         </ul>
 
+        <div
+          class="floor-plans__variants"
+          data-floor-plan-variants>
+        </div>
       </aside>
 
       <div class="floor-plans__content">
@@ -60,6 +70,7 @@ const currentPlan = floorPlans[0];
         <div class="floor-plans__image">
 
           <img
+           data-floor-plan-image
             src={currentPlan.image}
             alt={`${currentPlan.rooms}-кімнатна квартира`}
           />
@@ -68,29 +79,33 @@ const currentPlan = floorPlans[0];
 
         <div class="floor-plans__info">
 
-          <h3 class="floor-plans__plan-title">
+          <h3
+            class="floor-plans__plan-title"
+            data-floor-plan-title
+            >
             {currentPlan.rooms}-кімнатна квартира
           </h3>
 
           <p class="floor-plans__area">
             Площа:
-            <strong>{currentPlan.area} м²</strong>
+            <strong data-floor-plan-area>
+              {currentPlan.area} м²
+            </strong>
           </p>
 
-          <p class="floor-plans__text">
-            {currentPlan.description}
-          </p>
+            <p
+              class="floor-plans__text"
+              data-floor-plan-description
+            >
+              {currentPlan.description}
+            </p>
 
           <Button
             text="Переглянути квартири"
             href="#finder"
           />
-
         </div>
-
       </div>
-
     </div>
-
   </div>
 </section>

@@ -3,10 +3,10 @@ import { apartments } from "@data/apartments";
 import Button from "@components/ui/Button.astro";
 
 const statusLabels = {
-  available: "Вільна",
-  reserved: "Заброньована",
+  free: "Вільна",
+  reserved: "Зарезервована",
   sold: "Продана",
-};
+} as const;
 ---
 
 <section class="apartments" id="apartments">
@@ -30,8 +30,11 @@ const statusLabels = {
 
     <div class="apartments__grid">
 
-      {
-         apartments.slice(0, 8).map((apartment) => (
+      
+    {apartments
+      .filter((apartment) => apartment.status === "free")
+      .slice(0, 8)
+      .map((apartment) => (
 
           <article 
             class="apartment-card"
