@@ -4,6 +4,23 @@ import Button from "@components/ui/Button.astro";
 ---
 
 <section class="hero" id="hero">
+
+  <div class="hero__media">
+    <video
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-hidden="true"
+    >
+      <source src="/SUN-TOWER.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero__overlay"></div>
+  </div>
+
   <div class="container">
     <div class="hero__inner">
 
@@ -30,10 +47,7 @@ import Button from "@components/ui/Button.astro";
 
       </div>
 
-      <div class="hero__media">
-        Hero Image
-      </div>
-
     </div>
   </div>
+
 </section>

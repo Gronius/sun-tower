@@ -14,11 +14,18 @@
   place-items: center;
 
   min-height: 34rem;
-
+  overflow: hidden;
   border-radius: var(--radius-lg);
 
   background-color: var(--color-surface);
   color: var(--color-text-light);
+}
+
+.about__media img { 
+  display: block; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
 }
 
 .about__badge {
