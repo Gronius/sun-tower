@@ -1,44 +1,129 @@
 ---
 import { features } from "@data/features";
-
 ---
 
 <section class="features" id="features">
   <div class="container">
 
     <div class="features__heading">
-
       <span class="features__badge">
         Переваги
       </span>
 
       <h2 class="features__title">
-        Чому обирають Sun Tower
+        Продумано до найменших деталей
       </h2>
 
+      <p class="features__description">
+        SUN TOWER поєднує сучасну архітектуру, комфорт,
+        безпеку та простір для життя всієї родини.
+      </p>
     </div>
 
     <div class="features__grid">
 
-      {features.map((feature) => (
-        <article class="feature-card">
+      {
+        features.map((feature, index) => (
+          <article
+            class:list={[
+              "feature-card",
+              { "feature-card--large": index === 0 },
+            ]}
+            data-feature-card
+          >
 
-          <div class="feature-card__icon">
-            {feature.icon}
-          </div>
+            <div class="feature-card__inner">
 
-          <h3 class="feature-card__title">
-            {feature.title}
-          </h3>
+              <!-- =========================
+                   FRONT
+              ========================== -->
+              <div class="feature-card__front">
 
-          <p class="feature-card__description">
-            {feature.description}
-          </p>
+                <div class="feature-card__number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-        </article>
-      ))}
+                <div class="feature-card__top">
+                  <span
+                    class="feature-card__arrow"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
+                </div>
+
+                <div class="feature-card__icon">
+                  <img
+                    src={`/icons/features/${feature.icon}.svg`}
+                    alt=""
+                    width="72"
+                    height="72"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="feature-card__content">
+                  <h3 class="feature-card__title">
+                    {feature.title}
+                  </h3>
+
+                  <p class="feature-card__description">
+                    {feature.description}
+                  </p> 
+                </div>
+
+              </div>
+
+              <!-- =========================
+                   BACK
+              ========================== -->
+              <div class="feature-card__back">
+
+                <div class="feature-card__number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div class="feature-card__back-content">
+
+                  <div class="feature-card__back-icon">
+                    <img
+                      src={`/icons/features/${feature.icon}.svg`}
+                      alt=""
+                      width="48"
+                      height="48"
+                    />
+                  </div>
+
+                  <h3 class="feature-card__title">
+                    {feature.title}
+                  </h3>
+
+                  <p class="feature-card__description">
+                    {feature.description}
+                  </p>
+
+                </div>
+
+                <span
+                  class="feature-card__back-hint"
+                  aria-hidden="true"
+                >
+                  ←
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+        ))
+      }
 
     </div>
 
   </div>
 </section>
+
+<script>
+  import "../../scripts/features-flip";
+</script>
