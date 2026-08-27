@@ -3,6 +3,7 @@
 .floor-schemes {
   padding-block: 0;
 
+
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -17,7 +18,8 @@
     padding 0.5s ease;
 
   &.is-visible {
-    padding-block: 80px;
+    padding-block: var(--section-padding-block);
+    background-color: rgba(195, 238, 88, 0.623);
 
     opacity: 1;
     visibility: visible;

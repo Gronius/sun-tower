@@ -110,21 +110,23 @@ import { navigation } from "@data/navigation";
 
     </div>
 
-    <div class="footer__bottom">
 
-      <p>
-        © {new Date().getFullYear()} {site.name}. Усі права захищено.
-      </p>
+<div class="footer__bottom">
+  <p>
+    © {new Date().getFullYear()} {site.name}. Усі права захищено.
+  </p>
 
-      <a
-        href="#hero"
-        class="footer__top-link"
-      >
-        ↑ Вгору
-      </a>
+  <a
+    href="#hero"
+    class="footer__top-link"
+    aria-label="Повернутися на початок сторінки"
+  >
+    <span class="footer__top-arrow" aria-hidden="true">↑</span>
+  </a>
 
-    </div>
+</div>
 
   </div>
 
 </footer>
+

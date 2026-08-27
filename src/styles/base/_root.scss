@@ -17,7 +17,11 @@
   --color-border: #e5e5e5;
   --color-border-dark: #928d8d;
 
-  --container-width: 1280px;
+ 
+
+  --container-width: 1360px;
+  --section-padding-inline: clamp(20px, 4vw, 100px);
+  --section-padding-block: clamp(40px, 7vw, 60px);
 
    --radius-sm: 6px;
   --radius-md: 10px;
@@ -42,7 +46,6 @@
   --space-8: 4rem;
   --space-9: 6rem;
 
-  
 
 
 
