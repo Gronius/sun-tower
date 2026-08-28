@@ -14,7 +14,7 @@ export const site: SiteData = {
   name: "Sun Tower",
   slogan: "Житло нового покоління",
 
-  phone: "+421 900 123 456",
+  phone: "+421 XXX xxx XXX",
   email: "info@suntower.sk",
 
   cta: "Обрати квартиру",

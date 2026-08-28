@@ -28,7 +28,7 @@ export const location: LocationData = {
   description:
     "Комплекс розташований в одному з найзручніших районів Банської Бистриці. Поруч знаходяться магазини, навчальні заклади, громадський транспорт та зелені зони для відпочинку.",
 
-  address: "Námestie Ľ. Štúra 5944/2, Banská Bystrica, Slovensko",
+  address: "Námestie Vinohradnici 944/9, Bansky Hrozno, Slovensko",
 
   coordinates: {
     lat: 48.726260,
